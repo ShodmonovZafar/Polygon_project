@@ -1,9 +1,9 @@
 
 class Rectangle:
-    def __init__(self, a:float, b:float):
+    
+    def __init__(self, a : float, b : float):
         self.a = a
         self.b = b
-
 
     def is_valid(self) -> bool:
         """
@@ -14,8 +14,10 @@ class Rectangle:
         Returns: 
             bool: True if the rectangle is valid, False otherwise
         """ 
-        pass
-
+        if self.a > 0 and self.b > 0:
+            return True
+        else:
+            return False
 
     def perimeter(self):
         """
@@ -26,8 +28,10 @@ class Rectangle:
         Returns:
             float or int: return perimeter of the rectangle if the rectangle is valid, 0 otherwise
         """
-        pass
-
+        if self.is_valid():
+            return 2 * (self.a + self.b)
+        else:
+            return 0
 
     def area(self):   
         """
@@ -38,4 +42,7 @@ class Rectangle:
         Returns:
             float or int:  return area of the rectangle if the rectangle is valid, 0 otherwise 
         """
-        pass
+        if self.is_valid():
+            return self.a * self.b
+        else:
+            return 0
